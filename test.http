@@ -1,0 +1,75 @@
+### Authorize
+#POST http://localhost:8080/api/v1/auth/login
+POST https://api.prostopodpis.ru/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "login": "Sergey.Haylov@gmail.com",
+  "password": "123"
+}
+
+### Find projects
+#GET http://localhost:8080/api/v1/projects
+GET https://api.prostopodpis.ru/api/v1/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY2MzcwMzc2NiwiZXhwIjoxNjYzNzI1MzY2fQ.H7EeP3ys78n31kMuG5xUITO8ttlOw4_RYexAr82YtMM
+
+### Find recipients
+GET http://localhost:8080/api/v1/project-recipients
+#GET https://api.prostopodpis.ru/api/v1/project-recipients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY2MzcwMzc2NiwiZXhwIjoxNjYzNzI1MzY2fQ.H7EeP3ys78n31kMuG5xUITO8ttlOw4_RYexAr82YtMM
+
+### Create recipient
+POST http://localhost:8080/api/v1/project-recipients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY2MzQ0NjQyNywiZXhwIjoxNjYzNDY4MDI3fQ.QnRXtSIYnwo2VtDOHXDGb8u4TpO8RnheB6lP69UzsSE
+
+{
+  "name": "Ложкин Иван",
+  "phone": "ХЗ",
+  "projectId": "63223c777f25ea27d52c7420"
+
+}
+
+
+### Send message (me)
+POST https://api.prostopodpis.ru/api/v1/messages/send
+#POST http://localhost:8080/api/v1/messages/send
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiQURNSU4sVVNFUiIsImlhdCI6MTY3MTI4OTQ0NywiZXhwIjoxNjcxMzExMDQ3fQ.zEFSB2GZAls4GsTkHG6YL6yNoTYZDQ2ndOOlXPoJ3Ro
+
+{
+  "apiKey": "094b7193-9581-4c3a-af68-0267cc662520",
+  "recipientId": "6325b2644ec1a42cc175c6d0",
+  "message": "Для входа в систему используйте одноразовый пароль 123"
+}
+
+
+### Send message (ivan)
+POST http://localhost:8080/api/v1/messages/send
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiVVNFUiIsImlhdCI6MTY2MzQ0NjY3NCwiZXhwIjoxNjYzNDY4Mjc0fQ.nHUxQOChwCqim8hdqCGki8f_mHv5nwDrtRPHkyWlwAk
+
+
+{
+  "projectId": "63223c777f25ea27d52c7420",
+  "recipientId": "63262dc082b7881fd4b4194b",
+  "message": "Даю еще раз"
+}
+
+
+###
+POST https://opentelegram.ssl-team.com/api/v1/nft/confirm
+Content-Type: application/json
+partner_id: 571b574b-7516-41a0-9797-8ecf993a4765
+uid: 737543312
+
+{"operationId":"18de977d-4298-42c2-b20e-c82d7c64d6f0"}
+
+
+
+### Invite QR Code
+GET http://localhost:8080/api/v1/project-recipients/qrcode/invite/63262dc082b7881fd4b4194b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTZXJnZXkuSGF5bG92QGdtYWlsLmNvbSIsInJvbGVzIjoiQURNSU4sVVNFUiIsImlhdCI6MTY3MTM2MzA4MiwiZXhwIjoxNjcxMzg0NjgyfQ.wcJqK4SOktjuDGWX9RWXmePXuLKjPUO45tqnmJ_6bZc

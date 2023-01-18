@@ -1,0 +1,30 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+
+cors:
+  max-age: 3600
+
+jwt:
+  secretKey: ${JWT_SECRET_KEY:}
+  validityInMs: ${JWT_VALIDITY_IN_MS:21600000}
+
+logging:
+  level:
+    root: info
+    org.springframework.web: DEBUG
+
+smtp-bz:
+  api: https://api.smtp.bz/v1
+  token: ${SMTP_BZ_TOKEN}
+  sender-email: ${SMTP_SENDER_EMAIL}
+
+default-tariff: ${DEFAULT_TARIFF_ID}
+sent-cost: ${SENT_COST:0.3}
+upload-dir: ${UPLOAD_DIR:/tmp}
+
+new-user-balance: ${NEW_USER_BALANCE:5.0}
